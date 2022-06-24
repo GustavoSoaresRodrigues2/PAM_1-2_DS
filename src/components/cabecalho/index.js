@@ -6,7 +6,7 @@ export default function Cabecalho() {
   return (
       <View style={styles.headers}>
           <Ionicons name='menu' size={24} color='white' />
-          <Text style={styles.Texto}> Play Store </Text>
+          <Text style={styles.Texto}> Móveis Express </Text>
 
           <Ionicons name='ios-search-sharp' size={24} color='white' />
       </View>

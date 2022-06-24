@@ -2,8 +2,9 @@ import { FlatList, StyleSheet, Text, View } from "react-native";
 import Cabecalho from "./src/components/cabecalho";
 import Botao from "./src/components/botao";
 import Jogos from "./src/components/jogos";
-import Dados from './src/dados/dadosJogos'
-import DadosCarrosel from './src/dados/dadosCarrosel'
+import Dados from './src/dados/dadosOfertas'
+import dadosCarrosel_Sofa from './src/dados/dadosCarrosel_Sofa'
+import dadosCarrosel_Poltrona from './src/dados/dadosCarrosel_Poltrona'
 import JogosCarrosel from "./src/components/carrosel";
 
 export default function App() {
@@ -13,30 +14,30 @@ export default function App() {
       <Botao
         logo="home"
         texto="Pagina Inicial"
+        cor="#00CED1"
+        logo2="cart"
+        texto2="Carrinho"
+        cor2="#00CED1"
+      />
+      <Botao
+        logo="albums-outline"
+        texto="Comodos"
         cor="#A9A9A9"
-        logo2="list-outline"
-        texto2="Configurações"
+        logo2="add-sharp"
+        texto2="Móveis"
         cor2="#A9A9A9"
       />
       <Botao
-        logo="camera-outline"
-        texto="Serviços Online"
-        cor="#FF6347"
-        logo2="book-outline"
-        texto2="Isenções"
-        cor2="#FF6347"
-      />
-      <Botao
-        logo="musical-notes-outline"
-        texto="Consultas Grátis"
-        cor="#1C1C1C"
-        logo2="game-controller"
-        texto2="Fale Conosco"
-        cor2="#1C1C1C"
+        logo="car"
+        texto="Entrega"
+        cor="#D3D3D3"
+        logo2="ios-logo-dropbox"
+        texto2="Loja Fisica"
+        cor2="#D3D3D3"
       />
 
-      <Text style = {{fontSize: 20, margin: 10, marginTop: 20}}>
-          Jogos em Destaque
+      <Text style = {{fontSize: 20, margin: 10, marginTop: 20, textAlign:"center"}}>
+          Ofertas do Dia
       </Text>
       <View>
         <FlatList
@@ -53,13 +54,31 @@ export default function App() {
         />
       </View>
 
-      <Text style = {{fontSize: 20, margin: 10, marginTop: 50}}>
-          Proximos Lançamentos!
+      <Text style = {{fontSize: 20, margin: 10, marginTop: 50, textAlign:"center"}}>
+          Sofás
       </Text>
       <View>
         <FlatList
           horizontal={true}
-          data={DadosCarrosel}
+          data={dadosCarrosel_Sofa}
+          keyExtractor={(item) => item.id}
+          renderItem = {({ item }) => (
+            <JogosCarrosel
+              titulo={item.nome}
+              imagem={item.imagem}
+              data={item.data}
+            />
+          )}
+        />
+      </View>
+
+      <Text style = {{fontSize: 20, margin: 10, marginTop: 50, textAlign:"center"}}>
+          Poltronas
+      </Text>
+      <View>
+        <FlatList
+          horizontal={true}
+          data={dadosCarrosel_Poltrona}
           keyExtractor={(item) => item.id}
           renderItem = {({ item }) => (
             <JogosCarrosel

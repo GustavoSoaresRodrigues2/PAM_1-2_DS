@@ -17,15 +17,15 @@ export default function Jogos({ titulo, valor, imagem }) {
 
 const estilo = StyleSheet.create({
     containerJogos: {
-        backgroundColor: '#DCDCDC',
+        backgroundColor: '#0000',
         borderRadius: 10,
-        marginTop: 8,
-        padding: 10,
+        marginTop: 5,
+        padding: 5,
         margin: 2,
         alignItems: 'center',
         justifyContent: 'center',
-        width: 100,
-        height: 150,
+        width: 125,
+        height: 175,
         marginLeft: 8
     },
     titulo: {
@@ -42,7 +42,7 @@ const estilo = StyleSheet.create({
     },
     images: {
         width: "100%",
-        height: 75,
+        height: 100,
         borderRadius: 3
     }
 })
